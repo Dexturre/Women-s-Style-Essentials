@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Affiliate Disclosure | Women's Style Essentials{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: var(--clr-white);
+        padding: 4rem;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-soft);
+        line-height: 1.8;
+    }
+
+    .legal-container h1 {
+        font-size: 2.5rem;
+        color: var(--clr-gold);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .legal-container p {
+        margin-bottom: 2rem;
+        color: var(--clr-text-light);
+        font-size: 1.1rem;
+    }
+
+    .disclosure-box {
+        background-color: var(--clr-beige);
+        border-left: 5px solid var(--clr-gold);
+        padding: 2rem;
+        margin-bottom: 3rem;
+        font-style: italic;
+    }
+
+    .legal-container h2 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--clr-text-main);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="section-padding" style="background-color: var(--clr-beige);">
+    <div class="container">
+        <div class="legal-container">
+            <h1>Affiliate Disclosure</h1>
+
+            <div class="disclosure-box">
+                "As an Amazon Associate, we earn from qualifying purchases."
+            </div>
+
+            <h2>Transparency is Our Priority</h2>
+            <p>At Women's Style Essentials, we believe in complete transparency with our readers. To help fund the
+                maintenance of this site and continue providing high-quality, independent reviews, we participate in
+                several affiliate marketing programs.</p>
+
+            <h2>How It Works</h2>
+            <p>This means that when you click on certain links to products on this site and make a purchase, we may
+                receive a small commission from the retailer. This commission comes at <strong>no additional cost to
+                    you</strong>. In fact, using our links is a wonderful way to support the work we do here without
+                spending an extra penny.</p>
+
+            <h2>Our Integrity</h2>
+            <p>Our reviews and recommendations are always based on our honest assessment of the products. We only
+                feature items that we believe provide value to our community. The compensation received through
+                affiliate programs never influences the content, topics, or products we choose to review.</p>
+
+            <h2>Amazon Associates Program</h2>
+            <p>Specifically, Women's Style Essentials is a participant in the Amazon Services LLC Associates Program, an
+                affiliate advertising program designed to provide a means for sites to earn advertising fees by
+                advertising and linking to Amazon.com. Pages on this site may include affiliate links to Amazon and its
+                affiliate sites on which the owner of this website will make a referral commission.</p>
+
+            <p>If you have any questions regarding this disclosure or our practices, please feel free to reach out to
+                us.</p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="{% url 'index' %}" class="btn btn-gold">Return to Home</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

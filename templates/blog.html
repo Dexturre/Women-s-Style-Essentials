@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-padding" style="background-color: var(--clr-soft-pink);">
+    <div class="container" style="text-align: center;">
+        <h1 class="section-title" style="margin-bottom: 1rem;">Our Latest Reviews</h1>
+        <p style="color: var(--clr-text-light); max-width: 600px; margin: 0 auto;">Discover honest, in-depth reviews of
+            luxury beauty favorites, designer-inspired fashion, and elegant accessories.</p>
+
+        <div class="category-nav"
+            style="margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+            <a href="{% url 'blog' %}" class="btn {% if not current_category %}btn-gold{% else %}btn-outline{% endif %}"
+                style="padding: 8px 20px;">All</a>
+            {% for cat in categories %}
+            <a href="{% url 'category_detail' cat.slug %}"
+                class="btn {% if current_category == cat %}btn-gold{% else %}btn-outline{% endif %}"
+                style="padding: 8px 20px;">{{ cat.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--clr-beige);">
+    <div class="container">
+        <div class="products-grid">
+            {% for product in products %}
+            <article class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-image"
+                    style="object-fit: contain; padding: 10px;">
+                <div class="product-info">
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <p class="product-desc">{{ product.short_description }}</p>
+                    <a href="{% url 'product_detail' product.pk %}" class="btn btn-outline">Read More</a>
+                </div>
+            </article>
+            {% empty %}
+            <p>No products found in this section.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

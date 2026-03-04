@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<style>
+    .post-header-image {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 3rem;
+        box-shadow: var(--box-shadow-soft);
+    }
+
+    .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: var(--clr-white);
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-soft);
+    }
+
+    .post-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--clr-gold);
+    }
+
+    .product-cta-container {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="section-padding" style="background-color: var(--clr-beige);">
+    <div class="container">
+        <article class="post-content">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="post-header-image">
+            <h1>{{ product.title }}</h1>
+            <div class="content-body">
+                {{ product.full_description|linebreaks }}
+            </div>
+
+            <div class="product-cta-container">
+                {% if product.amazon_link %}
+                <a href="{{ product.amazon_link }}" class="btn btn-gold"
+                    style="font-size: 1.1rem; padding: 15px 40px;">Check Latest Price on Amazon</a>
+                {% else %}
+                <span class="btn btn-gold" style="font-size: 1.1rem; padding: 15px 40px; cursor: default;">Check Latest
+                    Price on Amazon</span>
+                {% endif %}
+                <p class="affiliate-notice" style="margin-top: 15px; font-size: 0.9rem; font-weight: bold;">As an Amazon
+                    Associate, we earn from qualifying purchases.</p>
+            </div>
+        </article>
+    </div>
+</main>
+{% endblock %}

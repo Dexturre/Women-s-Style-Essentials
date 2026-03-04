@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div class="hero-content">
+            <h1>Women’s Style Essentials</h1>
+            <p class="hero-subtitle">Discover Premium Beauty & Fashion Picks for Modern Women.</p>
+            <div>
+                <a href="{% url 'blog' %}" class="btn btn-gold">Explore Latest Picks</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="{% static 'images/Gemini_Generated_Image_qsbpc3qsbpc3qsbp_cleanup.png' %}"
+                alt="Luxury Beauty Products">
+        </div>
+    </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="section-padding" style="background-color: var(--clr-beige);">
+    <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+            {% for category in categories %}
+            <a href="{% url 'category_detail' category.slug %}" class="category-card">
+                <h3>{{ category.name }}</h3>
+            </a>
+            {% empty %}
+            <p>No categories yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="section-padding" style="background-color: var(--clr-white);">
+    <div class="container">
+        <h2 class="section-title">Spotlight Favorites</h2>
+        <div class="products-grid">
+            {% for product in products %}
+            <article class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-image"
+                    style="object-fit: contain; padding: 10px;">
+                <div class="product-info">
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <p class="product-desc">{{ product.short_description }}</p>
+                    {% if product.amazon_link %}
+                    <a href="{{ product.amazon_link }}" class="btn btn-gold">Check Latest Price on Amazon</a>
+                    {% else %}
+                    <span class="btn btn-gold" style="cursor: default;">Check Latest Price on Amazon</span>
+                    {% endif %}
+                    <p class="affiliate-notice" style="text-align: center; margin-top: 10px;">As an Amazon Associate, we
+                        earn from qualifying purchases.</p>
+                </div>
+            </article>
+            {% empty %}
+            <p>Check back soon for our spotlight picks!</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Women's Style Essentials</title>
+    <meta name="description" content="Get in touch with Women's Style Essentials.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            background-color: var(--clr-white);
+            padding: 4rem;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-soft);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-info h1 {
+            font-size: 2.2rem;
+            color: var(--clr-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--clr-text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .email-display {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--clr-text-main);
+            padding: 1rem;
+            background-color: var(--clr-beige);
+            border-left: 4px solid var(--clr-gold);
+            display: inline-block;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--clr-text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--clr-gold);
+            box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+    </style>
+</head>
+
+<body style="background-color: var(--clr-beige);">
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">Women's Style Essentials</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog & Reviews</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="contact-container">
+
+                <div class="contact-info">
+                    <h1>Get in Touch</h1>
+                    <p>We would love to hear from you. For inquiries about product reviews, brand partnerships, or
+                        general questions, please use the contact form or reach out directly via email.</p>
+
+                    <div style="margin-bottom: 1rem;">
+                        <span
+                            style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--clr-text-light);">Business
+                            Email:</span>
+                        <div class="email-display">sabeehabid391@gmail.com</div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <!-- Visual Only Form -->
+                    <form action="#" method="get"
+                        onsubmit="event.preventDefault(); alert('This is a static visual representation of the form.');">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Jane Doe"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="jane@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control"
+                                placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Women's Style Essentials</h4>
+                    <p style="color: var(--clr-text-light); margin-bottom: 1rem; max-width: 300px;">Curating the finest
+                        in luxury beauty and fashion to elevate your everyday lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog & Reviews</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclosure.html">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Women's Style Essentials. All rights reserved.</p>
+                <p class="affiliate-notice">As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

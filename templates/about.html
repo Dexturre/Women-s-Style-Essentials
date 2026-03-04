@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | Women's Style Essentials{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: var(--clr-white);
+        padding: 5rem;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-soft);
+    }
+
+    .about-hero {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .about-hero h1 {
+        font-size: 3rem;
+        color: var(--clr-gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .about-hero p {
+        font-size: 1.2rem;
+        color: var(--clr-text-light);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .about-section {
+        margin-bottom: 4rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.8rem;
+        color: var(--clr-text-main);
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .about-section h2::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: var(--clr-gold);
+        margin-top: 8px;
+    }
+
+    .about-section p {
+        color: var(--clr-text-light);
+        line-height: 1.9;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    .mission-box {
+        background-color: var(--clr-beige);
+        border-left: 4px solid var(--clr-gold);
+        padding: 2.5rem;
+        margin: 3rem 0;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--clr-text-main);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 4rem;
+    }
+
+    .about-image {
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-soft);
+        width: 100%;
+    }
+
+    .contact-cta {
+        text-align: center;
+        padding-top: 4rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            padding: 3rem 2rem;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .about-hero h1 {
+            font-size: 2.2rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="section-padding" style="background-color: var(--clr-beige);">
+    <div class="container">
+        <div class="about-container">
+            <div class="about-hero">
+                <h1>Our Story</h1>
+                <p>Curating Elegance, Reviewing Quality, and Elevating Your Everyday Life.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Who We Are</h2>
+                <p>Welcome to <strong>Women's Style Essentials</strong>—your premiere destination for honest,
+                    sophisticated reviews on the things that matter most to the modern woman. Whether it's a
+                    high-performance skincare mask or a designer-inspired accessory, we believe that true luxury lies in
+                    the details.</p>
+                <p>We started this platform with a simple belief: you shouldn't have to choose between affordability and
+                    elegance. Our team spends hours researching, testing, and photographing products to provide you with
+                    the visual and informational clarity you need before making a purchase.</p>
+            </div>
+
+            <div class="mission-box">
+                "Our mission is to help women discover products that make them feel confident, luxurious, and empowered,
+                through transparent reviews and a curated eye for style."
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <h2>Our Philosophy</h2>
+                    <p>We don't just "post" products. Every item featured on our site goes through a rigorous selection
+                        process. We look for quality craftsmanship, effective ingredients, and that "special something"
+                        that turns a simple purchase into a staple in your lifestyle.</p>
+                    <p>Transparency is at the heart of everything we do. As an Amazon Associate, we are open about our
+                        affiliate relationships, ensuring that our recommendations remain independent and focused solely
+                        on your satisfaction.</p>
+                </div>
+                <img src="{% static 'images/Gemini_Generated_Image_qsbpc3qsbpc3qsbp_cleanup.png' %}"
+                    alt="Luxury Lifestyle" class="about-image">
+            </div>
+
+            <div class="contact-cta">
+                <h2>Let's Connect</h2>
+                <p>Have a product you'd like us to review? Or perhaps a suggestion for our next category? We love
+                    hearing from our community.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="{% url 'contact' %}" class="btn btn-gold">Send us a Message</a>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem;">Direct Inquiries: <a
+                        href="mailto:sabeehabid391@gmail.com"
+                        style="color: var(--clr-gold); font-weight: 700;">sabeehabid391@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
