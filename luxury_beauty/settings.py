@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(bbbdv&z((vgnp!bdb9*b8_s3c5jbtxu!$2^(9)p820r2nqsnh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your-render-name.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -68,6 +68,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'luxury_beauty.wsgi.application'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
+
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # Database
